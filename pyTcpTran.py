@@ -23,8 +23,12 @@ def run(file,lport=5551, sleeptime=5):
             
 if __name__ == '__main__':
     if len(sys.argv) < 2:
-        print 'eg. pyTcpTran.py proxy.txt 5551'
+        print 'eg. python pyTcpTran.py proxy.txt 5551'
         sys.exit(1)
-    file = sys.argv[1]
-    port = sys.argv[2]
-    run(file, port)
+    elif len(sys.argv) == 2:
+        _, file = sys.argv
+        run(file)
+    else:
+        _, file, lport = sys.argv[:3]
+        run(file, lport)
+    
