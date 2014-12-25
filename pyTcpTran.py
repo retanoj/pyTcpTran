@@ -1,4 +1,4 @@
-﻿# coding = utf-8
+﻿# coding=utf-8
 #
 # ######################################################
 #
@@ -15,7 +15,7 @@ import sys
 def run(file,lport=5551, sleeptime=5):
     with open(file) as f:
         for line in f:
-            rhost, rport = line.split(':')
+            rhost, rport = line.replace('\r','').replace('\n','').split(':')
             cmd = "ip_relay %s %s %s" % (lport, rhost, rport)
             p = Popen(cmd, shell=False)
             sleep(sleeptime)
