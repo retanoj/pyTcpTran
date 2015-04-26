@@ -31,3 +31,4 @@ pyTcpTran
 >     python pyTcpTran proxy.txt 5551
 
  
+> https://github.com/retanoj/BurpMultiProxy Burpsuite插件版代理工具
